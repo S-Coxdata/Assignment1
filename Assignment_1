@@ -1,0 +1,196 @@
+#Function Calls:
+#Below is a list of the function calls. The call names are the program names with a _ between the program and its coresponding number.
+#They are listed at the bottom of the program of this sheet and will automatically run if you run the whole sheet
+# program_1()
+# program_2()
+# program_3()
+# program_4()
+# program_5()
+# program_6()
+# program_7()
+# program_8()
+# program_9()
+# program_10()
+
+
+
+
+
+
+
+
+#program 1
+
+#create an input prompt for users name
+# then returns name with a greeting
+def program_1():
+    Hello = input('What is your name?' )
+    Next = "Hello, " + Hello + ", nice to meet you!"
+    print(Next)
+
+
+#program 2
+#Create a user input prompt
+#Then count the characters in that prompt
+#convert that number into a str
+#print the results
+def program_2():
+    Hello_2 = input("What is the string? ")
+    print(Hello_2+ " has " + str(len(Hello_2)) + " characters.")
+
+#program 3
+#create inprompts for a noun, verb, adjective, and adverb.
+#print out the resulting madlib with one out put
+def program_3():
+    noun       = input('Enter a noun: ')
+    verb       = input('Enter a verb: ')
+    adjective  = input('Enter an adjective: ')
+    adverb     = input('Enter an adverb: ')
+
+    print("YOU DID NOT " + verb + " the " +" " + adjective +" " + " " + \
+     noun + " "+ adverb + "!?.....You did?! Oh well, hahahaha! Poor " + noun+ ".")
+
+#PROGRAM 4
+#create a program that prompts the user for 2 numbers
+#perform a series of math probles with those 2 numbers
+#show the user the math problems performed and their results
+def program_4():
+    let_us_math1 = input("Pick a number, any number: ")
+    let_us_math2 = input("Excellent choice! Now give me another!: ")
+    n1 = float(let_us_math1)
+    n2 = float(let_us_math2)
+    m1 = let_us_math1
+    m2 = let_us_math2
+    _add    = n1 + n2
+    _sub    = n1 - n2
+    _times  = n1 * n2
+    _divide = n1 / n2
+
+    print( "Here we go!:"+ "\n" +\
+      m1 + " + "+ m2 +" = "+ str(_add)+ "\n" +\
+      m1 + " - "+ m2+" = " + str(_sub)+"\n" +\
+      m1 + " * "+ m2+" = " + str(_times)+"\n" +\
+      m1 + " / "+ m2+" = " + str(_divide))
+
+#Program 5
+#Prompt User for their current age and their desired retirment age
+#Calculate the number of years that would take and tell the user what year they would retire in.
+def program_5():
+    import datetime as dt
+    now = dt.datetime.now()
+    C_age = int(input("what is your current age? "))
+    R_age = int(input("At what age would you like to retire? "))
+    age_diff = R_age - C_age
+    print("You have "+str(age_diff)+" years left until you can retire.")
+    print("It's " + str(now.year)+" , so you can retire in "+str(int(now.year)+age_diff)+".")
+
+#Program 6 create a code that calcs the area of a room
+#Prompts user for measurements in feet
+#calcultes the area then displays area in feet and meets respectively
+def program_6():
+    r_length = input("What is the length of the room in feet? ")
+    r_width = input("What is the width of the room in feet? ")
+    r_area = float(r_length)* float(r_width)
+    def ft_to_meters(bruce):
+        return bruce * 0.092903
+
+    r_area_meters = ft_to_meters(r_area)
+    print("The area is:"+ "\n" +
+      str(r_area)+" square feet." + "\n"+
+      str(r_area_meters)+" square meters.")
+
+#Program 7
+#Solves the critical and timeless question of how many slices of pizza
+#does everyone get?
+#First gathers user inputs for number of people, pizzas, and slices per za
+#Then displays the results of slices per person and slices remaining
+def program_7():
+    people = input("Number of people?: ")
+    pizzas = input("Number of pizzas?: ")
+    slices = input("Number of slices?: ")
+    s_to_pep = (int(slices)*int(pizzas))//int(people)
+    remainder = (int(slices)*int(pizzas))% int(people)
+    print(str(people)+ " people with " + str(pizzas) + " pizzas."+"\n"
+      "Each person gets " + str(s_to_pep)+ " pieces of pizza."+"\n"+
+      "There are " + str(remainder)+ " piece(s) remaining up for grab.")
+
+
+
+#Program 8 calculate the amount of paint needed to paint a room's ceiling
+#promt user for inputs
+#display to amount of paint(in gallons) required, assuming 1 gallon covers 360 sq ft
+
+def program_8():
+    import numpy as np
+    c_length = input("What is the length of the room?(in feet): ")
+    c_width = input("what is the width of the room?(in feet): ")
+    c_area = float(c_length)*float(c_width)
+    def paint_needed(amount):
+        return np.ceil(amount/360)
+    print("You will need to purchase "+ str(paint_needed(c_area))+" gallons of paint"+"\n"+
+      "to cover "+ str(c_area)+" square feet.")
+
+
+
+#Program 9 Create a simple self checkout
+#prompt user for quantities and prices. Calculate a sub total, apply tax, and then
+#generate an itemized reciept with final total
+def program_9():
+    price_1 = float(input('Enter the price of item 1: '))
+    quantity_1= float(input('Enter the quantity of item 1: '))
+    price_2 = float(input('Enter the price of item 2: '))
+    quantity_2 = float(input('Enter the quantity of item 2: '))
+    price_3 = float(input('Enter the the price of item 3: '))
+    quantity_3 = float(input('Enter the quantity of item 3: '))
+    amount_1 = price_1 * quantity_1
+    amount_2 = price_2 * quantity_2
+    amount_3 = price_3 * quantity_3
+    subtotal = amount_1+amount_2+amount_3
+    tax = subtotal * .055
+    total= round(float(subtotal+tax), 2)
+    Reciept = str('Item 1: ' + str(quantity_1) + ' units perchased at: $' +  str(price_1) + ' per unit. Amount for item 1:  $' +str(amount_1) + "\n"+
+    'Item 2: ' + str(quantity_2) + ' units perchased at: $' +  str(price_2) + ' per unit. Amount for item 2:  $' +str(amount_2) + "\n"+
+    'Item 3: ' + str(quantity_3) + ' units perchased at: $' +  str(price_3) + ' per unit. Amount for item 3:  $' +str(amount_3) + "\n"+
+    "Subtotal: $" + str(subtotal)+ "\n"+
+    "Tax: $" + str(tax)+ "\n"+
+    "Total: $" + str(total))
+    print(Reciept)
+
+
+
+#Program 10 Creat a program that calculates simple interest
+#Promt user for inputs, calculates interest earned on investment, creates an output
+def program_10():
+    princiapl = float(input('Enter the principal amount: $'))
+    interest  = float(input('Enter the annual rate of interest(example: if the interest is 5.5%, input 5.5): '))/100
+    duration  = float(input('Enter the duration, in number of years, of this investment: '))
+    simple_interest = (1+ interest*duration)
+    future_value = round((princiapl * simple_interest)+.005, 2)
+    print("After " + str(duration)+ " year(s) at " +str(interest*100)+ "% interest, the investment" + "\n"+
+      "will be worth $"+ str(future_value))
+
+
+
+
+program_1()
+program_2()
+program_3()
+program_4()
+program_5()
+program_6()
+program_7()
+program_8()
+program_9()
+program_10()
+
+
+
+
+
+
+
+
+
+
+
+
